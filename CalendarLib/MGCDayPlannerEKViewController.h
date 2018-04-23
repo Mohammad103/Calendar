@@ -39,6 +39,7 @@
 @interface MGCDayPlannerEKViewController : MGCDayPlannerViewController<UIPopoverPresentationControllerDelegate>
 
 @property (nonatomic) NSCalendar *calendar;
+@property (nonatomic) UIColor *eventsColor;
 @property (nonatomic) NSSet *visibleCalendars;
 @property (nonatomic, readonly) EKEventStore *eventStore;
 @property (nonatomic, weak) id<MGCDayPlannerEKViewControllerDelegate> delegate;

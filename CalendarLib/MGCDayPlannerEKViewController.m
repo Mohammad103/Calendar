@@ -72,6 +72,7 @@ static NSString* const EventCellReuseIdentifier = @"EventCellReuseIdentifier";
     if (self = [super initWithNibName:nil bundle:nil]) {
         _eventKitSupport = [[MGCEventKitSupport alloc]initWithEventStore:eventStore];
         _events = [[NSMutableArray alloc] init];
+        self.eventsColor = [UIColor lightGrayColor];
     }
     return self;
 }
@@ -389,7 +390,7 @@ static NSString* const EventCellReuseIdentifier = @"EventCellReuseIdentifier";
     evCell.font = [UIFont systemFontOfSize:11];
     evCell.title = ev.title;
     evCell.subtitle = ev.location;
-    evCell.color = [UIColor colorWithCGColor:[UIColor greenColor].CGColor];
+    evCell.color = self.eventsColor;
     evCell.style = MGCStandardEventViewStylePlain|MGCStandardEventViewStyleSubtitle;
     evCell.style |= (type == MGCAllDayEventType) ?: MGCStandardEventViewStyleBorder;
     return evCell;

@@ -25,6 +25,7 @@
     self.dayPlannerView.backgroundColor = [UIColor clearColor];
     self.dayPlannerView.backgroundView = [UIView new];
     self.dayPlannerView.backgroundView.backgroundColor = [UIColor whiteColor];
+    self.eventsColor = [UIColor colorWithRed:103.0/255 green:190.0/255 blue:109.0/255 alpha:1.0];
     
     if (isiPad) {
         //NSLog(@"---------------- iPAD ------------------");
