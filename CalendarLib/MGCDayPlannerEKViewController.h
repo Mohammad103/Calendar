@@ -45,6 +45,7 @@
 
 /** designated initializer */
 - (instancetype)initWithEventStore:(EKEventStore*)eventStore;
+- (void)addEventWithTitle:(NSString *)title content:(NSString *)content startDate:(NSDate *)startDate endDate:(NSDate *)endDate;
 - (void)reloadEvents;
 
 @end
@@ -55,6 +56,7 @@
 
 @optional
 
+- (void)dayPlannerEventSelectedAtIndex:(NSUInteger)index;
 - (void)dayPlannerEKEViewController:(MGCDayPlannerEKViewController*)vc willPresentEventViewController:(EKEventViewController*)eventViewController;                                     
 - (UINavigationController*)dayPlannerEKViewController:(MGCDayPlannerEKViewController*)vc navigationControllerForPresentingEventViewController:(EKEventViewController*)eventViewController;
 

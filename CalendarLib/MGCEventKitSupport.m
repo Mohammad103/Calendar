@@ -66,23 +66,25 @@
 
 - (void)checkEventStoreAccessForCalendar:(void (^)(BOOL accessGranted))completion
 {
-    EKAuthorizationStatus status = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
+    [self accessGrantedForCalendar];
     
-    switch (status) {
-        case EKAuthorizationStatusAuthorized:
-            [self accessGrantedForCalendar];
-            completion(YES);
-            break;
-            
-        case EKAuthorizationStatusNotDetermined:
-            [self requestCalendarAccess:completion];
-            break;
-            
-        case EKAuthorizationStatusDenied:
-        case EKAuthorizationStatusRestricted:
-            [self accessDeniedForCalendar];
-            completion(NO);
-    }
+//    EKAuthorizationStatus status = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
+//
+//    switch (status) {
+//        case EKAuthorizationStatusAuthorized:
+//            [self accessGrantedForCalendar];
+//            completion(YES);
+//            break;
+//
+//        case EKAuthorizationStatusNotDetermined:
+//            [self requestCalendarAccess:completion];
+//            break;
+//
+//        case EKAuthorizationStatusDenied:
+//        case EKAuthorizationStatusRestricted:
+//            [self accessDeniedForCalendar];
+//            completion(NO);
+//    }
 }
 
 - (void)requestCalendarAccess:(void (^)(BOOL accessGranted))completion

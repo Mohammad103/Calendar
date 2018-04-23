@@ -83,6 +83,12 @@ typedef enum : NSUInteger
 	
 	self.calendarViewController = controller;
     self.firstTimeAppears = YES;
+    
+    
+    [self addEventWithTitle:@"Event #1" content:@"Content ..." startDate:[NSDate date] endDate:[[NSDate date] dateByAddingTimeInterval:60*60]];
+    [self addEventWithTitle:@"Event #2" content:@"Content ..." startDate:[[NSDate date] dateByAddingTimeInterval:2*60*60] endDate:[[NSDate date] dateByAddingTimeInterval:3*60*60]];
+    [self addEventWithTitle:@"Event #3" content:@"Content ..." startDate:[[NSDate date] dateByAddingTimeInterval:4*60*60] endDate:[[NSDate date] dateByAddingTimeInterval:5*60*60]];
+    [self addEventWithTitle:@"Event #4" content:@"Content ..." startDate:[[NSDate date] dateByAddingTimeInterval:6*60*60] endDate:[[NSDate date] dateByAddingTimeInterval:7*60*60]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -135,6 +141,14 @@ typedef enum : NSUInteger
 }
 
 #pragma mark - Private
+
+
+- (void)addEventWithTitle:(NSString *)title content:(NSString *)content startDate:(NSDate *)startDate endDate:(NSDate *)endDate
+{
+    [self.dayViewController addEventWithTitle:title content:content startDate:startDate endDate:endDate];
+    [self.weekViewController addEventWithTitle:title content:content startDate:startDate endDate:endDate];
+}
+
 
 - (DayViewController*)dayViewController
 {
@@ -324,6 +338,12 @@ typedef enum : NSUInteger
 //        return self.navigationController;
 //    }
     return nil;
+}
+
+
+- (void)dayPlannerEventSelectedAtIndex:(NSUInteger)index
+{
+    
 }
 
 
