@@ -85,10 +85,11 @@ typedef enum : NSUInteger
     self.firstTimeAppears = YES;
     
     
-    [self addEventWithTitle:@"Event #1" content:@"Content ..." startDate:[NSDate date] endDate:[[NSDate date] dateByAddingTimeInterval:60*60]];
-    [self addEventWithTitle:@"Event #2" content:@"Content ..." startDate:[[NSDate date] dateByAddingTimeInterval:2*60*60] endDate:[[NSDate date] dateByAddingTimeInterval:3*60*60]];
-    [self addEventWithTitle:@"Event #3" content:@"Content ..." startDate:[[NSDate date] dateByAddingTimeInterval:4*60*60] endDate:[[NSDate date] dateByAddingTimeInterval:5*60*60]];
-    [self addEventWithTitle:@"Event #4" content:@"Content ..." startDate:[[NSDate date] dateByAddingTimeInterval:6*60*60] endDate:[[NSDate date] dateByAddingTimeInterval:7*60*60]];
+    [self addEventWithTitle:@"Event #0" content:@"Content ..." startDate:[NSDate date] endDate:[[NSDate date] dateByAddingTimeInterval:60*60]];
+    [self addEventWithTitle:@"Event #1" content:@"Content ..." startDate:[[NSDate date] dateByAddingTimeInterval:6*60*60] endDate:[[NSDate date] dateByAddingTimeInterval:7*60*60]];
+    [self addEventWithTitle:@"Event #2" content:@"Content ..." startDate:[[NSDate date] dateByAddingTimeInterval:4*60*60] endDate:[[NSDate date] dateByAddingTimeInterval:5*60*60]];
+    [self addEventWithTitle:@"Event #3" content:@"Content ..." startDate:[[NSDate date] dateByAddingTimeInterval:2*60*60] endDate:[[NSDate date] dateByAddingTimeInterval:3*60*60]];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -343,7 +344,7 @@ typedef enum : NSUInteger
 
 - (void)dayPlannerEventSelectedAtIndex:(NSUInteger)index
 {
-    
+    NSLog(@"dayPlannerEventSelectedAtIndex: %lu", (unsigned long)index);
 }
 
 
